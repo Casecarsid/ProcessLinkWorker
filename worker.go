@@ -105,9 +105,9 @@ func process(bookmark Bookmark) Bookmark{
 }
 func receive(){
 	//connect to RabbitMQ server
-	//rabbitMQHost := os.Getenv("RABBITMQ_SERVICE_HOST")
-	//conn, err := amqp.Dial(rabbitMQHost)
-	conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
+	rabbitMQHost := os.Getenv("RABBITMQ_SERVICE_HOST")
+	conn, err := amqp.Dial(rabbitMQHost)
+	//conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 
