@@ -104,7 +104,7 @@ func process(bookmark Bookmark) Bookmark{
 	return bookmark
 }
 func receive(){
-	//connect to RabbitMQ server
+	//connect to Rabbit MQ server
 	rabbitMQHost := os.Getenv("RABBITMQ_SERVICE_HOST")
 	conn, err := amqp.Dial(rabbitMQHost)
 	//conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
